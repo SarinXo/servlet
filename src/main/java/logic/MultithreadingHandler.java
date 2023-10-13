@@ -1,13 +1,14 @@
 package logic;
 
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 
 public class MultithreadingHandler {
 
-    private static final BlockingQueue<Future<?>> QUEUE
+    private static final BlockingQueue<FutureTask<String>> QUEUE
             = BlockingQueueWrapper.getInstance();
 
     private static int numThreads = 10;
