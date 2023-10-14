@@ -8,7 +8,7 @@ import java.util.concurrent.FutureTask;
 
 public class MultithreadingHandler {
 
-    private static final BlockingQueue<FutureTask<String>> QUEUE
+    private static final BlockingQueue<FutureTask<Void>> QUEUE
             = BlockingQueueWrapper.getInstance();
 
     private static int numThreads = 10;
