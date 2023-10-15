@@ -7,9 +7,10 @@ import java.util.concurrent.TimeUnit;
 public class HeavyTask implements Task{
 
     @Override
-    public String execute(HttpServletRequest request,
-                          HttpServletResponse response) throws Exception {
+    public void execute(HttpServletRequest request,
+                        HttpServletResponse response) throws Exception {
         TimeUnit.SECONDS.sleep(3);
+        Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
         response.getWriter()
                 .println(
                         String.format(
@@ -17,7 +18,6 @@ public class HeavyTask implements Task{
                                 + Thread.currentThread().getName()
                                 + " was successfully done!")
                 );
-        return "";
     }
 
 }

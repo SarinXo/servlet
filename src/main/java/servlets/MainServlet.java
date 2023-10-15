@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
+import static logic.task.TaskHandler.redirect;
+
 
 @WebServlet(name = "MainServlet", urlPatterns = "/my-servlet")
 public class MainServlet extends HttpServlet {
@@ -16,7 +18,11 @@ public class MainServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                           HttpServletResponse response)
             throws ServletException, IOException {
-
+        try {
+            redirect(request, response);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
