@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static logic.task.TaskHandler.redirect;
+import static logic.TaskHandler.redirect;
 
 
 @WebServlet(name = "MainServlet", urlPatterns = "/my-servlet")
@@ -16,7 +16,7 @@ public class MainServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request,
-                          HttpServletResponse response)
+                         HttpServletResponse response)
             throws ServletException, IOException {
         try {
             redirect(request, response);

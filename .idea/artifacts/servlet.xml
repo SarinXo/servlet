@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="servlet">
+    <output-path>$PROJECT_DIR$/out/artifacts/servlet</output-path>
+    <root id="root">
+      <element id="module-output" name="servlets.main" />
+    </root>
+  </artifact>
+</component>
